@@ -4,7 +4,7 @@
 инфологической модели 
 
 <p align="center">
- <img width="200px" src="model.png" alt="qr"/>
+ <img width="500px" src="model.png" alt="qr"/>
 </p>
 
 ### Настраиваем базу данных MySQL
@@ -83,4 +83,60 @@ CREATE TABLE EmploymentHistory (
                                    employer_name VARCHAR(100),
                                    FOREIGN KEY (applicant_id) REFERENCES Applicant(applicant_id)
 );
+```
+## Далее создадим набор тестовых данных
+```mysql
+-- Добавление данных в таблицу Company
+INSERT INTO Company (company_name, legal_entity_name, legal_entity_address, contact_phone, contact_email)
+VALUES ('Company A', 'Legal Entity A', 'Address A', '111-111-1111', 'emailA@example.com'),
+       ('Company B', 'Legal Entity B', 'Address B', '222-222-2222', 'emailB@example.com');
+
+-- Добавление данных в таблицу Vacancy
+INSERT INTO Vacancy (company_id, vacancy_title, description, required_education_level, posting_date, application_deadline, salary_range)
+VALUES (1, 'Data Analyst', 'Description C', 'Bachelor', '2022-02-01', '2022-03-01', '$50,000 - $70,000'),
+       (1, 'Sales Manager', 'Description D', 'Bachelor', '2022-02-15', '2022-03-15', '$60,000 - $80,000'),
+       (1, 'Software Engineer', 'Description A', 'Bachelor', '2022-01-01', '2022-02-01', '$60,000 - $80,000'),
+       (1, 'Marketing Specialist', 'Description B', 'Bachelor', '2022-01-15', '2022-02-15', '$50,000 - $70,000'),
+       (1, 'Graphic Designer', 'Description E', 'Associate', '2022-03-01', '2022-04-01', '$40,000 - $60,000');
+
+
+-- Добавление данных в таблицу Skill
+INSERT INTO Skill (skill_name)
+VALUES ('Java'), ('SQL'), ('Marketing'), ('Communication');
+
+-- Добавление данных в таблицу Vacancy_Skill
+INSERT INTO Vacancy_Skill (vacancy_id, skill_id)
+VALUES (1, 1),
+       (1, 2),
+       (2, 3);
+
+
+-- Добавление данных в таблицу Applicant
+INSERT INTO Applicant (full_name, current_vacancy)
+VALUES ('Applicant 1', 1),
+       ('Applicant 2', 1),
+       ('Applicant 3', 2),
+       ('Applicant 4', 2),
+       ('Applicant 5', 3);
+
+-- По аналогии добавляются данные в таблицы Applicant, Applicant_Skill, HiringProcess, EmploymentHistory
+SELECT v.vacancy_title, COUNT(*) AS num_applicants
+FROM Vacancy v
+         JOIN Applicant a ON v.vacancy_id = a.current_vacancy
+WHERE v.company_id = 1
+GROUP BY v.vacancy_title
+ORDER BY num_applicants DESC
+LIMIT 5;
+
+```
+## После чего можем выполнить наш запрос к БД:
+
+```mysql
+-- Итоговый запрос
+SELECT v.vacancy_title, COUNT(*) AS num_applicants
+FROM Vacancy v
+         JOIN Applicant a ON v.vacancy_id = a.current_vacancy
+GROUP BY v.vacancy_id
+ORDER BY num_applicants DESC
+LIMIT 1;
 ```
