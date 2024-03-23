@@ -140,3 +140,4 @@ GROUP BY v.vacancy_id
 ORDER BY num_applicants DESC
 LIMIT 1;
 ```
+## Все эскизы web страниц в html файлах
