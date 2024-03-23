@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль соискателя</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+	    margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+	.header h1 {
+            color: #fff;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #5fbae9;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4a9cd3;
+        }
+	.header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        .header .container {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .auth-info {
+            text-align: right;
+        }
+        .header .auth-info .user-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url('user-icon.png') no-repeat center center;
+            background-size: cover;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .header .auth-info .user-status {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Название Системы</h1>
+            </div>
+            <div class="auth-info">
+                <span class="user-icon"></span>
+                <span>Авторизован</span>
+                <span class="user-status">[admin]</span>
+            </div>
+        </div>
+    </div>
+    <h1>Профиль соискателя</h1>
+    <form>
+        <input type="text" id="fullName" placeholder="ФИО">
+        <input type="tel" id="phoneNumber" placeholder="Телефонный номер">
+        <input type="text" id="education" placeholder="Уровень образования">
+        <input type="text" id="skills" placeholder="Навыки">
+        <input type="text" id="desiredSalary" placeholder="Желаемая заработная плата">
+        <input type="text" id="desiredPosition" placeholder="Желаемые вакансии">
+        <button type="submit">Сохранить изменения</button>
+    </form>
+    <!-- Список предыдущих мест работы будет здесь -->
+    <button type="button">Добавить место работы</button>
+    <!-- Форма добавления места работы будет здесь -->
+</body>
+</html>

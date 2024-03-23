@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Подбор персонала</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+	.header h1 {
+            color: #fff;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .search-box {
+            margin-bottom: 30px;
+        }
+        .search-box input[type="text"] {
+            padding: 10px;
+            width: calc(100% - 22px);
+            margin-bottom: 10px;
+        }
+        .search-box button {
+            padding: 10px;
+            width: 100%;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .search-box button:hover {
+            background-color: #4cae4c;
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f8f8;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+	.header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        .header .container {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .auth-info {
+            text-align: right;
+        }
+        .header .auth-info .user-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url('user-icon.png') no-repeat center center;
+            background-size: cover;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .header .auth-info .user-status {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Название Системы</h1>
+            </div>
+            <div class="auth-info">
+                <span class="user-icon"></span>
+                <span>Авторизован</span>
+                <span class="user-status">[admin]</span>
+            </div>
+        </div>
+    </div>
+    <h1>Подбор персонала</h1>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" placeholder="Поиск соискателей...">
+            <button type="button">Найти</button>
+        </div>
+        <table>
+            <tr>
+                <th>ФИО</th>
+                <th>Уровень образования</th>
+                <th>Навыки</th>
+                <th>Желаемая заработная плата</th>
+                <th>Желаемая вакансия</th>
+                <th>Текущий статус</th>
+                <th>Действия</th>
+            </tr>
+            <tr>
+                <td>Иванов Иван Иванович</td>
+                <td>Высшее</td>
+                <td>HTML, CSS, JavaScript</td>
+                <td>60000 руб.</td>
+                <td>Фронтенд-разработчик</td>
+                <td>Рассмотрение</td>
+                <td><button type="button">Просмотреть профиль</button></td>
+            </tr>
+            <!-- Другие строки таблицы -->
+        </table>
+    </div>
+</body>
+</html>

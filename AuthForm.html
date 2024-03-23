@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма авторизации</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+	h1 {
+            color: #fff;
+        }
+        .login-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	    position: absolute;
+  	    top: 50%;
+  	    left: 50%;
+  	    transform: translate(-50%, -50%);
+        }
+        .form-control {
+            margin-bottom: 10px;
+        }
+        .form-control label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-control input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .form-control input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        .form-control input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+	 .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        .header .container {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+	.header a {
+	    color: #fff;
+	    text-decoration: none;
+	}
+	.header .container .links {
+	    margin: auto;
+	    display: flex;
+            justify-content: space-between;
+            align-items: center;
+	}
+        .header .auth-info {
+            text-align: right;
+        }
+        .header .auth-info .user-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url('user-icon.png') no-repeat center center;
+            background-size: cover;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .header .auth-info .user-status {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+     <div class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Название Системы</h1>
+            </div>
+	    <div class="links">
+                <a href="">Специалист</a>
+		<a href="">Менеджер</a>
+		<a href="">Гражданин</a>
+            </div>
+            <div class="auth-info">
+                <span class="user-icon"></span>
+                <span>Авторизован</span>
+                <span class="user-status">[admin]</span>
+            </div>
+        </div>
+    </div>
+    <div class="login-form">
+        <h2>Вход в систему</h2>
+        <form action="/login" method="post">
+            <div class="form-control">
+                <label for="username">Имя пользователя</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-control">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-control">
+                <input type="submit" value="Войти">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Управление вакансиями компании</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+	.header h1 {
+            color: #fff;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #5fbae9;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4a9cd3;
+        }
+	.header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        .header .container {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .auth-info {
+            text-align: right;
+        }
+        .header .auth-info .user-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url('user-icon.png') no-repeat center center;
+            background-size: cover;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .header .auth-info .user-status {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Название Системы</h1>
+            </div>
+            <div class="auth-info">
+                <span class="user-icon"></span>
+                <span>Авторизован</span>
+                <span class="user-status">[admin]</span>
+            </div>
+        </div>
+    </div>
+    <h1>Управление вакансиями компании</h1>
+    <form>
+        <input type="text" id="companyName" placeholder="Название компании">
+        <input type="text" id="legalName" placeholder="Юридическое название">
+        <input type="text" id="legalAddress" placeholder="Адрес юридического лица">
+        <input type="tel" id="phone" placeholder="Телефон">
+        <input type="email" id="email" placeholder="E-mail">
+        <button type="submit">Добавить компанию</button>
+    </form>
+    <!-- Таблица с вакансиями будет здесь -->
+    <button type="button">Добавить вакансию</button>
+    <!-- Форма добавления вакансии будет здесь -->
+</body>
+</html>
